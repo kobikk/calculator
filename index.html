@@ -36,26 +36,6 @@
 		</form>
 	</div>
 <script src="js/jquery-1.11.3.min.js"></script> 
-<script>
-	var result = $('#result'),
-	    button = $('.btn');
-
-	$(button).click(function() {
-		var buttonVal = $(this).val(),
-	 		value = result.val();
-	 		
-	  	value += buttonVal;
-	  	result.val(value);	  
-	});
-	$('#eval').click(function() {
-		var sum = result.val();
-		
-		result.val('');
-		result.val(eval(sum));
-	});
-	$('#clear').click(function() {
-		result.val('');
-	});
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
