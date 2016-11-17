@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/main.css">
+	<title>Simple calcuator - CSS and JQUERY</title>
+</head>
+<body>
+	<div class="container">
+		<h1> Simple Calculator with CSS and JQUERY</h1>
+
+		<form id="calc">
+			<input type="button" class="btn" id="clear" value="c">
+			<input type="text" id="result" >		
+				
+				<input type="button" class="normal btn" value="7">
+				<input type="button" class="normal btn" value="8">
+				<input type="button" class="normal btn" value="9">
+				<input type="button" class="operator btn" value="+">
+
+				<input type="button" class="normal btn" value="4">
+				<input type="button" class="normal btn" value="5">
+				<input type="button" class="normal btn" value="6">
+				<input type="button" class="operator btn" value="-">
+
+				<input type="button" class="normal btn" value="1">
+				<input type="button" class="normal btn" value="2">
+				<input type="button" class="normal btn" value="3">
+				<input type="button" class="operator btn" value="/">
+
+				<input type="button" class="normal btn" value="0">
+				<input type="button" class="normal btn" value=".">
+				<input type="button" class="brn" id="eval" value="=">
+				<input type="button" class="operator btn" value="*">
+		</form>
+	</div>
+<script src="js/jquery-1.11.3.min.js"></script> 
+<script>
+	var result = $('#result'),
+	    button = $('.btn');
+
+	$(button).click(function() {
+		var buttonVal = $(this).val(),
+	 		value = result.val();
+	 		
+	  	value += buttonVal;
+	  	result.val(value);	  
+	});
+	$('#eval').click(function() {
+		var sum = result.val();
+		
+		result.val('');
+		result.val(eval(sum));
+	});
+	$('#clear').click(function() {
+		result.val('');
+	});
+</script>
+</body>
+</html>
